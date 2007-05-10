@@ -1,0 +1,6 @@
+*.tmplc
+.DS_Store
+cache
+*.pluginc
+.bzr
+.bzrignore
