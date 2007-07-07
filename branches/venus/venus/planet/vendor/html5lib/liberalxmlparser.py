@@ -15,9 +15,12 @@ References:
 """
 
 import html5parser
-from constants import voidElements
+from constants import voidElements, contentModelFlags
 import gettext
 _ = gettext.gettext
+
+from xml.dom import XHTML_NAMESPACE
+from xml.sax.saxutils import unescape
 
 class XMLParser(html5parser.HTMLParser):
     """ liberal XML parser """
@@ -37,13 +40,20 @@ class XMLParser(html5parser.HTMLParser):
 
             # For EmptyTags, process both a Start and an End tag
             if token["type"] == "EmptyTag":
+                save = self.tokenizer.contentModelFlag
                 self.phase.processStartTag(token["name"], token["data"])
+                self.tokenizer.contentModelFlag = save
                 token["data"] = {}
                 token["type"] = "EndTag"
 
         elif token["type"] == "EndTag":
             if token["data"]:
                self.parseError(_("End tag contains unexpected attributes."))
+
+        elif token["type"] == "Characters":
+            # un-escape rcdataElements (e.g. style, script)
+            if self.tokenizer.contentModelFlag == contentModelFlags["CDATA"]:
+                token["data"] = unescape(token["data"])
 
         elif token["type"] == "Comment":
             # Rescue CDATA from the comments
@@ -59,6 +69,7 @@ class XHTMLParser(XMLParser):
 
     def __init__(self, *args, **kwargs):
         html5parser.HTMLParser.__init__(self, *args, **kwargs)
+        self.phases["initial"] = XmlInitialPhase(self, self.tree)
         self.phases["rootElement"] = XhmlRootPhase(self, self.tree)
 
     def normalizeToken(self, token):
@@ -66,16 +77,21 @@ class XHTMLParser(XMLParser):
 
         # ensure that non-void XHTML elements have content so that separate
         # open and close tags are emitted
-        if token["type"]  == "EndTag" and \
-            token["name"] not in voidElements and \
-            token["name"] == self.tree.openElements[-1].name and \
-            not self.tree.openElements[-1].hasContent():
-            for e in self.tree.openElements:
-                if 'xmlns' in e.attributes.keys():
-                    if e.attributes['xmlns'] <> 'http://www.w3.org/1999/xhtml':
-                        break
+        if token["type"]  == "EndTag":
+            if token["name"] in voidElements:
+                if not self.tree.openElements or \
+                  self.tree.openElements[-1].name != token["name"]:
+                    token["type"] = "EmptyTag"
+                    if not token.has_key("data"): token["data"] = {}
             else:
-                self.tree.insertText('')
+                if token["name"] == self.tree.openElements[-1].name and \
+                  not self.tree.openElements[-1].hasContent():
+                    for e in self.tree.openElements:
+                        if 'xmlns' in e.attributes.keys():
+                            if e.attributes['xmlns'] != XHTML_NAMESPACE:
+                                break
+                    else:
+                        self.tree.insertText('')
 
         return token
 
@@ -86,7 +102,19 @@ class XhmlRootPhase(html5parser.RootElementPhase):
         self.tree.document.appendChild(element)
         self.parser.phase = self.parser.phases["beforeHead"]
 
+class XmlInitialPhase(html5parser.InitialPhase):
+    """ Consume XML Prologs """
+    def processComment(self, data):
+        if not data.startswith('?xml') or not data.endswith('?'):
+            html5parser.InitialPhase.processComment(self, data)
+
 class XmlRootPhase(html5parser.Phase):
+    """ Consume XML Prologs """
+    def processComment(self, data):
+        print repr(data)
+        if not data.startswith('?xml') or not data.endswith('?'):
+            html5parser.InitialPhase.processComment(self, data)
+
     """ Prime the Xml parser """
     def __getattr__(self, name):
         self.tree.openElements.append(self.tree.document)
