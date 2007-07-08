@@ -42,6 +42,10 @@ h2 {
 	font-weight: normal;
 }
 
+h3, h4 {
+	clear: both;
+}
+
 h3 {
 	font-size: 120%;
 	clear: both;
