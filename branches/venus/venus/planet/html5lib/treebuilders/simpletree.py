@@ -1,5 +1,5 @@
 import _base
-from html5lib.constants import voidElements
+from constants import voidElements
 from xml.sax.saxutils import escape
 
 # Really crappy basic implementation of a DOM-core like thing

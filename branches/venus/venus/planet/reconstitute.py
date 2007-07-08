@@ -16,8 +16,7 @@ Todo:
 import re, time, md5, sgmllib
 from xml.sax.saxutils import escape
 from xml.dom import minidom, Node
-from html5lib import liberalxmlparser
-from html5lib.treebuilders import dom
+from planet.html5lib import liberalxmlparser, treebuilders
 import planet, config
 
 illegal_xml_chars = re.compile("[\x01-\x08\x0B\x0C\x0E-\x1F]")
@@ -111,8 +110,8 @@ def date(xentry, name, parsed):
 
 def category(xentry, tag):
     xtag = xentry.ownerDocument.createElement('category')
-    if not tag.has_key('term') or not tag.term: return
-    xtag.setAttribute('term', tag.get('term'))
+    if tag.has_key('term') and tag.term:
+        xtag.setAttribute('term', tag.get('term'))
     if tag.has_key('scheme') and tag.scheme:
         xtag.setAttribute('scheme', tag.get('scheme'))
     if tag.has_key('label') and tag.label:
@@ -155,7 +154,7 @@ def content(xentry, name, detail, bozo):
         data = minidom.parseString(xdiv % detail.value).documentElement
         xcontent.setAttribute('type', 'xhtml')
     else:
-        parser = liberalxmlparser.XHTMLParser(tree=dom.TreeBuilder)
+        parser = liberalxmlparser.XHTMLParser(tree=treebuilders.dom.TreeBuilder)
         html = parser.parse(xdiv % detail.value, encoding="utf-8")
         for body in html.documentElement.childNodes:
             if body.nodeType != Node.ELEMENT_NODE: continue

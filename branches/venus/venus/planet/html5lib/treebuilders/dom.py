@@ -2,7 +2,7 @@ import _base
 from xml.dom import minidom, Node, XML_NAMESPACE, XMLNS_NAMESPACE
 import new
 from xml.sax.saxutils import escape
-from html5lib.constants import voidElements
+from constants import voidElements
 
 import re
 illegal_xml_chars = re.compile("[\x01-\x08\x0B\x0C\x0E-\x1F]")
@@ -74,13 +74,15 @@ class NodeBuilder(_base.Node):
 class TreeBuilder(_base.TreeBuilder):
     def documentClass(self):
         self.dom = minidom.getDOMImplementation().createDocument(None,None,None)
+        def hilite(self, encoding):
+            print 'foo'
+        method = new.instancemethod(hilite, self.dom, self.dom.__class__)
+        setattr(self.dom, 'hilite', method)
         return self
 
-    def insertDoctype(self, name):
+    def doctypeClass(self,name):
         domimpl = minidom.getDOMImplementation()
-        doctype = domimpl.createDocumentType(name,None,None)
-        self.document.appendChild(NodeBuilder(doctype))
-        doctype.ownerDocument = self.dom
+        return NodeBuilder(domimpl.createDocumentType(name,None,None))
 
     def elementClass(self, name):
         return NodeBuilder(self.dom.createElement(name))

@@ -1,4 +1,4 @@
-from html5lib.constants import scopingElements, tableInsertModeElements
+from constants import scopingElements, tableInsertModeElements
 try:
     frozenset
 except NameError:
