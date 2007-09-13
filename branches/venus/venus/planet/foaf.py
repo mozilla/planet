@@ -35,13 +35,13 @@ def load_model(rdf, base_uri):
     return model
 
 # input = foaf, output = ConfigParser
-def foaf2config(rdf, config, subject=None, section=None):
+def foaf2config(rdf, config, subject=None):
 
     if not config or not config.sections():
         return
 
     # there should be only be 1 section
-    if not section: section = config.sections().pop()
+    section = config.sections().pop()
 
     try:
         from RDF import Model, NS, Parser, Statement
@@ -191,7 +191,6 @@ if __name__ == "__main__":
 
     for uri in sys.argv[1:]:
         config.add_section(uri)
-        foaf2config(urllib.urlopen(uri), config, section=uri)
-        config.remove_section(uri)
+        foaf2config(urllib.urlopen(uri), config)
 
     config.write(sys.stdout)

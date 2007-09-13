@@ -111,8 +111,6 @@ try:
     import libxml2
 except ImportError:
 
-    delattr(ApplyTest,'test_apply_filter_mememe')
-
     try:
         import win32pipe
         (stdin,stdout) = win32pipe.popen4('xsltproc -V', 't')

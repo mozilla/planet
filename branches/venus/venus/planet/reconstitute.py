@@ -236,7 +236,7 @@ def reconstitute(feed, entry):
     links(xentry, entry)
 
     bozo = feed.bozo
-    if not entry.has_key('title') or not entry.title:
+    if not entry.has_key('title'):
         xentry.appendChild(xdoc.createElement('title'))
 
     content(xentry, 'title', entry.get('title_detail',None), bozo)
