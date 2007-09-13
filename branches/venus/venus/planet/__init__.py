@@ -32,6 +32,11 @@ def getLogger(level, format):
     loggerParms = (level,format)
     return logger
 
+<<<<<<< TREE
+=======
+sys.path.insert(1, os.path.join(os.path.dirname(__file__),'vendor'))
+
+>>>>>>> MERGE-SOURCE
 # Configure feed parser
 from planet import feedparser
 feedparser.SANITIZE_HTML=0
