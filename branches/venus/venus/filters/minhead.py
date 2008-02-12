@@ -14,7 +14,10 @@ else:
   minhead=3
 
 # parse input stream
-doc = minidom.parse(sys.stdin)
+try:
+  doc = minidom.parse(sys.stdin)
+except:
+  sys.exit(1)
 
 # search for headings below the permissable minimum
 first=minhead
