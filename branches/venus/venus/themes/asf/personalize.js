@@ -161,6 +161,7 @@ function localizeDate(element) {
   if (!date.getTime()) return;
 
   var local = date.toLocaleString();
+  if (element.parentNode.nodeName == 'a') local = date.toLocaleTimeString();
   var match = local.match(localere);
   if (match) { /* Firefox */
     element.innerHTML = match[4] + ' ' + match[5].toLowerCase();
@@ -169,7 +170,7 @@ function localizeDate(element) {
     return days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' +
       date.getDate() + ', ' + date.getFullYear();
   } else {
-    local = local.replace(/GMT(-\d\d\d\d) \(.*\)$/, '$1'); /* Webkit */
+    local = local.replace(/ GMT(-\d\d\d\d) \(.*\)$/, ''); /* Webkit */
     element.title = element.innerHTML + ' GMT';
     element.innerHTML = local;
     return days[date.getDay()] + ', ' + date.getDate() + ' ' +
@@ -292,11 +293,4 @@ function personalize() {
 }
 
 // hook event
-window.onload = personalize;
-if (document.addEventListener) {
-    onDOMLoad = function() {
-      window.onload = undefined;
-      personalize();
-    };
-    document.addEventListener("DOMContentLoaded", onDOMLoad, false);
-}
+document.addEventListener("DOMContentLoaded", personalize, false);
