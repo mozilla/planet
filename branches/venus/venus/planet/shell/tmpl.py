@@ -161,12 +161,17 @@ def tmpl_mapper(source, rules):
     for name,value in source.items():
         if name.startswith('planet_'):
             output[name[7:]] = String(value)
+        if not output.get('name') and source.has_key('title_detail'):
+            output['name'] = Plain(source.title_detail.value)
 
     # copy over all planet namespaced elements from child source element
     if 'source' in source:
         for name,value in source.source.items():
             if name.startswith('planet_'):
                 output['channel_' + name[7:]] = String(value)
+            if not output.get('channel_name') and \
+                source.source.has_key('title_detail'):
+                output['channel_name'] = Plain(source.source.title_detail.value)
 
     return output
 
