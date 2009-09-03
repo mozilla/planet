@@ -1,3 +1,17 @@
 ExpiresActive on
 ExpiresDefault "access plus 5 minutes"
-AddType application/xhtml+xml .html
+
+AddType text/xml rss ffkar opml soap sn2 tb tbrss wsdl xss
+AddType text/plain txt esf
+AddType application/atom+xml atom
+AddType application/xhtml+xml xhtml
+AddType application/xhtml+xml html
+AddType application/xhtml+xml html5
+AddType application/rss+xml rss2 rss21 rss11
+AddType application/rdf+xml rdf
+AddType application/x-netcdf cdf
+
+AddDefaultCharset UTF-8
+AddCharset utf-8 atom rss ffkar soap tb tbrss wsdl xss html
+AddCharset utf-8 txt esf xhtml rss2 rss21 rdf cdf
+
