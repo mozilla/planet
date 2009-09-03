@@ -23,7 +23,7 @@
 <meta charset='utf-8'/>
 <meta name='generator' content='{atom:generator}'/>
 <link href='planet.css' rel='stylesheet' type='text/css'/>
-<link href='img/mozilla-16.png' rel='icon' type='image/png'/>
+<link href='img/mozilla-16.png' rel='shortcut icon' type='image/png'/>
 <xsl:if test='atom:link[@rel="self"]/@type'>
 <link href='{atom:link[@rel="self"]/@href}' title='{atom:title/text()}' rel='alternate' type='{atom:link[@rel="self"]/@type}'/>
 </xsl:if></head><body>
