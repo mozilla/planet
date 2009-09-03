@@ -92,7 +92,7 @@ a:hover {
   padding: 0;
 } /* @todo: needs ie fixing */
 
-#content {
+.content {
   margin-left: 116px;
   margin-right: 260px;
 }
@@ -221,4 +221,16 @@ h4 a {
   width: 100%;
   background: transparent url('img/sidebar-bottom.png') no-repeat 50% bottom;
   padding-bottom: 30px;
+}
+
+.sidebar .message {
+        cursor: help;
+        border-bottom: 1px dashed red;
+}
+
+.sidebar a.message:hover {
+        cursor: help;
+        background-color: #ffD0D0;
+        border: 1px dashed red !important;
+        text-decoration: none !important;
 }
