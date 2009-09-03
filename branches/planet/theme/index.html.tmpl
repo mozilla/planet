@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 
 ### Fancy Planet HTML template.
@@ -24,9 +24,25 @@
 
 <body>
 
-<div class="header">
-<h1><TMPL_VAR name></h1>
+<div id="utility">
+<p><strong>Looking For</strong></p>
+<ul>
+<li><a href="http://www.mozilla.org/">mozilla.org</a></li>
+<li><a href="http://wiki.mozilla.org">Wiki</a></li>
+<li><a href="http://developer.mozilla.org/">Developer Center</a></li>
+<li><a href="http://www.firefox.com">Firefox</a></li>
+<li><a href="http://www.getthunderbird.com">Thunderbird</a></li>
+</ul>
 </div>
+
+<div id="header">
+<div id="dino">
+<h1>
+<a title="Back to home page" href="/"><TMPL_VAR name></a>
+</h1>
+</div>
+</div>
+
 
 <div class="content">
 
@@ -64,134 +80,51 @@
 
 <div class="sidebar">
 
-<div>
-Feeds: <a href="atom.xml">Atom</a>, <a href="rss20.xml">RSS 2.0</a>, <a href="rss10.xml">RSS 1.0</a><br>
-Subscription list: <a href="foafroll.xml">FOAF</a>, <a href="opml.xml">OPML</a>
-<br><br>
-Last update: <TMPL_VAR date><br>
-<em>All times are UTC.</em>
-</div>
-
-<script type="text/javascript">
-function calcDiff(thenMS) {
-var now = new Date();
-var then = new Date(thenMS);
-var nowMS = now.getTime();
-var diff = thenMS - nowMS;
-
-var seconds = Math.floor(diff/1000);
-var minutes = Math.floor(seconds/60);
-var hours = Math.floor(minutes/60);
-var days = Math.floor(hours/24);
-var weeks = Math.floor(days/7);
-
-if (weeks < 2)
-document.write("<dd style=\"color: red\">");
-else
-document.write("<dd>");
-if (diff < 0)
-document.write("now");
-else
-document.write(days, " days, ",
-	   hours%24, " hours, ", minutes%60, " minutes<br>",
-	   then.toLocaleString());
-document.write("<\/dd>");
-}
-</script>
-
-<!--
-<div>
-<h2><a href="http://www.mozilla.org/roadmap.html#milestone-schedule">Gecko Tree Schedule</a></h2>
-<dl>
-<dt>Gecko 1.8rc1 / Firefox 1.5rc1 Release
-<script type="text/javascript">calcDiff(Date.UTC(2005, 10, 1, 7, 59))</script>
-<dt>Gecko 1.8rc2 / Firefox 1.5rc2 Lockdown
-<script type="text/javascript">calcDiff(Date.UTC(2005, 10, 5, 7, 59))</script>
-<dt>Gecko 1.8rc2 / Firefox 1.5rc2 Release
-<script type="text/javascript">calcDiff(Date.UTC(2005, 10, 12, 7, 59))</script>
-</dl>
-</div>
--->
-
-<!--        
-<div>
-<h2><a href="http://www.mozilla.org/roadmap.html#milestone-schedule">Gecko Tree Schedule</a></h2>
-<dl>
-<dt>Gecko 1.8beta2 Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2005, 3, 6, 6, 59))</script>
-<dt>Gecko 1.8beta3
-<script type="text/javascript">calcDiff(Date.UTC(2005, 4, 11, 6, 59))</script>
-<dt>Gecko 1.8 Branch
-<script type="text/javascript">calcDiff(Date.UTC(2005, 5, 8, 6, 59))</script>
-<dt>Firefox 1.1
-<script type="text/javascript">calcDiff(Date.UTC(2005, 6, 6, 6, 59))</script>
-<dt>Gecko 1.9a1 Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2005, 6, 20, 6, 59))</script>
-<dt>Firefox 2
-<script type="text/javascript">calcDiff(Date.UTC(2006, 9, 24, 22, 00))</script>
-</dl>
-</div>
--->
-<!--
-<div>
-<h2><a href="http://wiki.mozilla.org/Firefox3/Schedule">Gecko Tree Schedule</a></h2>
-<p><b>Note:</b> These dates are scheduling estimates, and as in most software projects are subject to change.  The current milestone is firm, the rest are preliminary and should be used for general guidance only.</p>
-<dl>
-<dt>Gecko 1.9 alpha 3 Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2007, 2, 20, 6, 59))</script>
-<dt>Gecko 1.9 alpha 3
-<script type="text/javascript">calcDiff(Date.UTC(2007, 2, 21, 23, 00))</script>
-</dl>
-</div>
--->
-<!-- <div>
-<h2><a href="http://wiki.mozilla.org/Firefox3/Schedule">Gecko Tree Schedule</a></h2>
-<p><b>Note:</b> These dates are scheduling estimates, and as in most software projects are subject to change.  The current milestone is firm, the rest are preliminary and should be used for general guidance only.</p>
-<dl>
-<dt>Gecko 1.9 alpha 5 Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2007, 4, 29, 6, 59))</script>
-<dt>Gecko 1.9 alpha 5
-<script type="text/javascript">calcDiff(Date.UTC(2007, 4, 31, 23, 00))</script>
-<dt>Gecko 1.9 alpha 6 Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2007, 5, 26, 6, 59))</script>
-<dt>Gecko 1.9 alpha 6
-<script type="text/javascript">calcDiff(Date.UTC(2007, 5, 28, 23, 00))</script>
-</dl>
-</div> -->
-<div>
-<h2><a href="http://wiki.mozilla.org/Firefox3.5/Schedule">Gecko 1.9.1 / Firefox 3.5 Schedule</a></h2>
-<p><b>Note:</b> These dates are scheduling estimates, and as in most software projects are subject to change.  The current milestone is firm, the rest are preliminary and should be used for general guidance only.</p>
-<h2><a href="http://planet.mozinterns.net">Planet Mozilla Interns</a></h2>
-<h2><a href="http://list-manage.com/subscribe.phtml?id=3be22ac12d">about:mozilla news</a></h2>
-<p>about:mozilla is by, for and about the Mozilla community, focusing on major news items related to all aspects of the Mozilla Project.</p>
-<!--<dl>
-<dt><a href="http://wiki.mozilla.org/Releases/Firefox_3.0rc1">Firefox 3 RC1 Release/Schedule Info</a>
-<dt>Firefox 3 RC1 - en-US String Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2008, 3, 4, 6, 59))</script>
-<dt>Firefox 3 RC1 - Code Freeze
-<script type="text/javascript">calcDiff(Date.UTC(2008, 3, 9, 6, 59))</script>
-</dl>-->
-</div>
-
-<div>
-<h2>Subscriptions</h2>
+<div class="feeds">
+<h2>Subscribe to Planet</h2>
+<p>Feeds:
 <ul>
+<li><a href="atom.xml">Atom</a></li>
+<li><a href="rss20.xml">RSS 2.0</a></li>
+<li><a href="rss10.xml">RSS 1.0</a></li>
+</ul></p>
+<p>Subscription list:</p>
+<ul>
+<li class="foaf"><a href="foafroll.xml">FOAF</a></li>
+<li class="opml"><a href="opml.xml">OPML</a></li>
+</ul>
+
+<p>Last update: <TMPL_VAR date><br>
+<em>All times are UTC.</em></p>
+</div>
+
+<div class="main">
+<h2>Other Planets</h2>
+<ul class="planets">
+<li><a href="http://education.mozilla.org/planet/">Mozilla Education</a></li>
+<li><a href="http://planet.mozinterns.net/">Mozilla Interns</a></li>
+<li><a href="http://planet.mozillamessaging.com/">Mozilla Messaging</a></li>
+<li><a href="http://blog.mozillaonline.com/">Mozilla Online (Chinese)</a></li>
+<li><a href="http://planet.bugzilla.org/">Planet Bugzilla</a></li>
+<li><a href="http://planet.firefox.com/">Planet Firefox</a></li>
+</ul>
+
+<h2>Subscriptions</h2>
+<ul class="subscriptions">
 <TMPL_LOOP Channels>
 <li><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a> <a href="<TMPL_VAR url ESCAPE="HTML">">(feed)</a></li>
 </TMPL_LOOP>
 </ul>
+<div class="bottom"></div>
 </div>
 
 </div>
 
-  <div id="footer">
-   <ul id="bn">
-    <li><a href="http://www.mozillafoundation.org/">Mozilla Foundation</a></li>
-    <li><a href="http://www.mozillazine.org/">MozillaZine.org</a></li>
-    <li><a href="http://www.mozilla.org/get-involved.html">Get Involved!</a></li>
-   </ul>
-   <p>Maintained by <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=planet.mozilla.org"><TMPL_VAR owner_name></a>, powered by <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a></p>
-  </div>
+<div id="footer">
+<div id="footer-content">
+<p>Maintained by the <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=planet.mozilla.org">Planet Mozilla Module Team</a>. Powered by <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a>.</p>
+</div>
+</div>
+
 </body>
-
 </html>

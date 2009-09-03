@@ -1,224 +1,224 @@
+* {
+  line-height: 1.4;
+  padding: 0;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
 body {
-     font-family: sans-serif;
-     background: #fff url("body_back.gif") repeat-x;
-     color: #000;
-     margin: 15px;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  background: #ffffff url(background.jpg) no-repeat scroll left top;
 }
 
-	a:link { color: #039; }
-        a:visited { color: #636; }
-        a:hover { color: #333; }
-        a:active { color: #000; }
-
-div.content {
-    margin: 0 230px 0 0;
-/*
-	padding-left: 0px;
-	padding-right: 0px;
-*/
-}
-
-h1 {
-/*        height: 50px; */
-	padding: 20px;
-
-	font-weight: normal;
-	letter-spacing: -2px;
-	text-transform: lowercase;
-	color: white;
-	background: #455372 /* url("header_bl.png") repeat-x*/;
-	-moz-border-radius: 12px;
-}
-
-h2, h3 {
-   border-bottom-width: 1px;
-   border-bottom-style: solid;
-   border-bottom-color: #cccccc;
-   margin-left: 0;
-}
-
-h2 {
-        font-size: 150%;
-	font-weight: normal;
-}
-
-h3, h4 {
-	clear: both;
-}
-
-h3 {
-	font-size: 120%;
-	clear: both;
-}
-
-h3 a {
-	text-decoration: none;
-}
-
-h4 {
-	margin: 1em 0 0 1em;
-}
-
-h4 a {
-}
-
-img.face {
-	float: right;
-	margin-top: -3em;
-}
-
-div.entry {
-        margin: 0 0.5em 1em 1em;
-		padding-top: 1em;
-}
-
-div.entry p:first-child {
-        margin-top: 0;
-}
-
-.entry .date {
-	margin-top: 0.5em;
-	text-align: right;
-}
-
-
-div.sidebar {
-        position: absolute;
-        top: 85px;
-        right: 0px;
-
-	width: 230px;
-
-	margin-left: 0px;
-	margin-right: 15px;
-
-	padding-left: 0px;
-	padding-right: 0px;
-
-	padding-top: 20px;
-
-	font-size: 70%;
-}
-
-.sidebar h2 {
-	font-size: 150%;
-	font-weight: bold;
-	color: black;
-	border-bottom-style: none;
-
-	padding-left: 5px;
-	margin-left: 0px;
-	margin-top: 0px;
-}
-
-.sidebar ul {
-	padding-left: 2em;
-	margin-left: 0px;
-
-	list-style-type: square;
-}
-
-.sidebar dl {
-	padding-left: 5px;
-	margin-left: 0px;
-}
-
-.sidebar dt {
-	padding-top: 5px;
-}
-
-.sidebar dd {
-	margin-left: 10px;
-}
-
-.sidebar ul li:hover {
-	color: grey;
-}
-
-.sidebar div {
-	padding: 10px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 20px;
-	margin-bottom: 10px;
-
-	background: #e4ecec;
-	-moz-border-radius: 1em;
+a {
+  color: #148cb5;
+  text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline !important;
-	color: blue !important;
+  color: #148cb5;
+  text-decoration: underline;
 }
 
+#header {
+  margin: 10px 0 0 96px;
+  height: 101px;
+  background: url(header-bg.jpg);
+}
 
-/* template.css footer */
+#header #dino {
+  background: url(header-dino.jpg) no-repeat;
+  height: 101px;
+  width: 300px;
+}
 
-        #footer {
-                border-top: 1px solid #666;
-                margin: 2em 0;
-                padding: 1em 0;
-                text-align: center;
-        }
-        
-        #footer ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-        }
-        
-        #footer li {
-                display: inline;
-        }
+#header h1 {
+  padding: 0;
+  margin: 0;
+  background: transparent url(logo.png) no-repeat 20px 35px;
+  z-index: 1;
+  height: 101px;
+}
 
-        #footer span,#footer a {
-                white-space: nowrap;
-                padding: 0 1em;
-        }
-        
-        #footer p span,#footer p a {
-                white-space: nowrap;
-                padding: 0 0.3em;
-        }
-        
-        #footer span a {
-                padding: 0;
-        }
-        
-        #footer p,#footer p a {
-                color: #666;
-        }
-        
-        #footer p a:hover {
-                color: #000;
-        }
+#header h1 a {
+  display: block;
+  text-indent: -9999px;
+  background: transparent url(logo.png) no-repeat 20px 35px;
+  overflow: hidden;
+  width: 265px;
+  height: 101px;
+}
 
+#utility {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 62.5%;
+  margin: 0.8em 0 0.7em 30px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 30px 0 0;
+}
 
-/* template_002.css */
+#utility * {
+  display: inline;
+}
 
-        #footer {
-                clear: both;
-                margin-top: 1em;
-        }
-                
-        #footer ul {
-                margin: 0 0 1em 0;
-                padding: 0;
-        }
-        
-        #footer li {
-                display: inline;
-                padding: 0 20px 0 0;
-                margin: 0;
-                white-space: nowrap;
-        }
-        
-        #footer p {
-                margin: 0.6em 0;
-        }
+#utility p {
+  margin-right: -20px;
+}
 
-/* planet */
+#utility strong {
+  color: #000;
+  font-size: 11px;
+}
 
-	#footer {
-		margin-right: 0;
-	}
+#utility ul {
+  margin-left: 10px;
+}
+
+#utility li {
+  background: transparent url(bullet_utility.png) no-repeat 4px center;
+  padding-left: 16px;
+  font-size: 11px;
+}
+
+#utility li:first-child {
+  background: none;
+  padding: 0;
+} /* @todo: needs ie fixing */
+
+#content {
+  margin-left: 116px;
+  margin-right: 260px;
+}
+
+h2 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 1.75em;
+  color: #b72822;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+h3 a {
+  color: black;
+}
+
+h4 {
+  margin: 0 0 0 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+h4 a {
+  color: black;
+}
+
+.entry {
+  margin-left: 15px;
+}
+
+#footer {
+  background-image: url(footer.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 207px;
+}
+
+#footer-content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  max-width: 1150px;
+}
+
+#footer-content p {
+  text-align: center;
+  padding: 5px;
+  background-color: #2a2a2a;
+  color: #999999;
+  font-size: 0.9em;
+}
+
+.sidebar {
+  position: absolute;
+  top: 135px;
+  right: 0px;
+	width: 230px;
+	margin: 0 15px 0 0;
+	padding: 20px 0 0 0;
+	font-size: 70%;
+}
+
+.sidebar .feeds {
+  padding-left: 15px;
+}
+
+.sidebar .feeds p {
+  padding: 0;
+  margin: 5px 0 0 0;
+} 
+.sidebar .feeds ul {
+  padding-left: 10px;
+}
+.sidebar .feeds li {
+  margin: 0;
+  padding: 0px;
+  display: inline;
+}
+
+.sidebar .feeds li {
+  background-image: url('feed-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 10px 3px 15px;
+  margin: .4em 0;
+}
+
+.sidebar .feeds li.opml {
+  background-image: url('opml-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 10px 3px 15px;
+  margin: .4em 0;
+}
+
+.sidebar .feeds li.foaf {
+  background-image: url('foaf-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 10px 3px 24px;
+  margin: .4em 0;
+}
+
+.sidebar .main {
+  background: transparent url('sidebar-back.png') no-repeat left top;
+  /*border-top:5px solid #0095B9;*/
+  /*min-height:438px; padding:20px;*/
+  padding: 15px 0 0 15px;
+}
+
+.sidebar .main ul.planets {
+  list-style-image:url('world.png');
+  padding-left: 35px;
+}
+
+.sidebar .main ul.planets li {
+  font-size: 1.3em; 
+}
+
+.sidebar .main .bottom {
+  height: 28px;
+  width: 100%;
+  background: transparent url('sidebar-bottom.png') no-repeat 50% bottom;
+  padding-bottom: 30px;
+}
