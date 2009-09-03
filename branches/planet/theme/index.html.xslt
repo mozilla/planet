@@ -66,7 +66,7 @@
 
 <h3><a href='{atom:source/atom:link[@rel="alternate"]/@href}' title='{atom:source/atom:title}'><xsl:value-of select='atom:source/planet:name'/></a></h3>
 <xsl:if test='atom:source/planet:face'>
-<img class='face' src='images/{atom:source/planet:face}' height='{atom:source/planet:faceheight}' alt='' width='{atom:source/planet:facewidth}'/>
+<img class='face' src='img/faces/{atom:source/planet:face}' height='{atom:source/planet:faceheight}' alt='' width='{atom:source/planet:facewidth}'/>
 </xsl:if>
 </xsl:if>
 

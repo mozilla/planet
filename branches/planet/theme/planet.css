@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, Verdana, sans-serif;
-  background: #ffffff url(background.jpg) no-repeat scroll left top;
+  background: #ffffff url('img/background.jpg') no-repeat scroll left top;
 }
 
 a {
@@ -28,11 +28,11 @@ a:hover {
 #header {
   margin: 10px 0 0 96px;
   height: 101px;
-  background: url(header-bg.jpg);
+  background: url('img/header-bg.jpg');
 }
 
 #header #dino {
-  background: url(header-dino.jpg) no-repeat;
+  background: url('img/header-dino.jpg') no-repeat;
   height: 101px;
   width: 300px;
 }
@@ -40,7 +40,7 @@ a:hover {
 #header h1 {
   padding: 0;
   margin: 0;
-  background: transparent url(logo.png) no-repeat 20px 35px;
+  background: transparent url('img/logo.png') no-repeat 20px 35px;
   z-index: 1;
   height: 101px;
 }
@@ -48,7 +48,7 @@ a:hover {
 #header h1 a {
   display: block;
   text-indent: -9999px;
-  background: transparent url(logo.png) no-repeat 20px 35px;
+  background: transparent url('img/logo.png') no-repeat 20px 35px;
   overflow: hidden;
   width: 265px;
   height: 101px;
@@ -82,7 +82,7 @@ a:hover {
 }
 
 #utility li {
-  background: transparent url(bullet_utility.png) no-repeat 4px center;
+  background: transparent url('img/bullet_utility.png') no-repeat 4px center;
   padding-left: 16px;
   font-size: 11px;
 }
@@ -128,7 +128,7 @@ h4 a {
 }
 
 #footer {
-  background-image: url(footer.jpg);
+  background-image: url('img/footer.jpg');
   background-position: center;
   background-repeat: no-repeat;
   height: 207px;
@@ -177,7 +177,7 @@ h4 a {
 }
 
 .sidebar .feeds li {
-  background-image: url('feed-icon.png');
+  background-image: url('img/feed-icon.png');
   background-repeat: no-repeat;
   background-position: 0 50%;
   padding: 3px 10px 3px 15px;
@@ -185,7 +185,7 @@ h4 a {
 }
 
 .sidebar .feeds li.opml {
-  background-image: url('opml-icon.png');
+  background-image: url('img/opml-icon.png');
   background-repeat: no-repeat;
   background-position: 0 50%;
   padding: 3px 10px 3px 15px;
@@ -193,7 +193,7 @@ h4 a {
 }
 
 .sidebar .feeds li.foaf {
-  background-image: url('foaf-icon.png');
+  background-image: url('img/foaf-icon.png');
   background-repeat: no-repeat;
   background-position: 0 50%;
   padding: 3px 10px 3px 24px;
@@ -201,14 +201,14 @@ h4 a {
 }
 
 .sidebar .main {
-  background: transparent url('sidebar-back.png') no-repeat left top;
+  background: transparent url('img/sidebar-back.png') no-repeat left top;
   /*border-top:5px solid #0095B9;*/
   /*min-height:438px; padding:20px;*/
   padding: 15px 0 0 15px;
 }
 
 .sidebar .main ul.planets {
-  list-style-image:url('world.png');
+  list-style-image:url('img/world.png');
   padding-left: 35px;
 }
 
@@ -219,6 +219,6 @@ h4 a {
 .sidebar .main .bottom {
   height: 28px;
   width: 100%;
-  background: transparent url('sidebar-bottom.png') no-repeat 50% bottom;
+  background: transparent url('img/sidebar-bottom.png') no-repeat 50% bottom;
   padding-bottom: 30px;
 }
