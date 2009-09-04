@@ -48,38 +48,42 @@
           </div>
         </div>
 
-        <xsl:for-each select='atom:entry'>
-          <!-- date header -->
-          <xsl:variable name="date" select="substring(atom:updated,1,10)"/>
-          <xsl:if test="not(preceding-sibling::atom:entry
-            [substring(atom:updated,1,10) = $date])">
-            <xsl:text>&#10;&#10;</xsl:text>
-            <h2>
-              <time datetime="{$date}">
-                <xsl:value-of select="substring-before(atom:updated/@planet:format,', ')"/>
-                <xsl:text>, </xsl:text>
-                <xsl:value-of select="substring-before(substring-after(atom:updated/@planet:format,', '), ' ')"/>
-              </time>
-            </h2>
-          </xsl:if>
+        <div class='main-content'>
 
-          <xsl:if test='not(preceding-sibling::atom:entry/atom:source/atom:id =atom:source/atom:id)'>
-            <h3><a href='{atom:source/atom:link[@rel="alternate"]/@href}' title='{atom:source/atom:title}'><xsl:value-of select='atom:source/planet:name'/></a></h3>
-            <xsl:if test='atom:source/planet:face'>
-              <img class='face' src='img/faces/{atom:source/planet:face}' height='{atom:source/planet:faceheight}' alt='' width='{atom:source/planet:facewidth}'/>
+          <xsl:for-each select='atom:entry'>
+            <!-- date header -->
+            <xsl:variable name="date" select="substring(atom:updated,1,10)"/>
+            <xsl:if test="not(preceding-sibling::atom:entry
+              [substring(atom:updated,1,10) = $date])">
+              <xsl:text>&#10;&#10;</xsl:text>
+              <h2>
+                <time datetime="{$date}">
+                  <xsl:value-of select="substring-before(atom:updated/@planet:format,', ')"/>
+                  <xsl:text>, </xsl:text>
+                  <xsl:value-of select="substring-before(substring-after(atom:updated/@planet:format,', '), ' ')"/>
+                </time>
+              </h2>
             </xsl:if>
-          </xsl:if>
 
-          <xsl:if test='atom:title'>
-            <h4><a href='{atom:link[@rel="alternate"]/@href}'><xsl:value-of select='atom:title'/></a></h4>
-          </xsl:if>
-          <div class='entry'>
-            <xsl:choose><xsl:when test='atom:content'><xsl:apply-templates select='atom:content'/></xsl:when><xsl:when test='atom:summary'><xsl:apply-templates select='atom:summary'/></xsl:when></xsl:choose>
-            <p class='date'>
-              <a href='{atom:link[@rel="alternate"]/@href}'><xsl:if test='creator'>by <xsl:value-of select='creator'/> at </xsl:if><xsl:value-of select='atom:updated/@planet:format'/></a>
-            </p>
-          </div>
-        </xsl:for-each>
+            <xsl:if test='not(preceding-sibling::atom:entry/atom:source/atom:id =atom:source/atom:id)'>
+              <h3><a href='{atom:source/atom:link[@rel="alternate"]/@href}' title='{atom:source/atom:title}'><xsl:value-of select='atom:source/planet:name'/></a></h3>
+              <xsl:if test='atom:source/planet:face'>
+                <img class='face' src='img/faces/{atom:source/planet:face}' height='{atom:source/planet:faceheight}' alt='' width='{atom:source/planet:facewidth}'/>
+              </xsl:if>
+            </xsl:if>
+
+            <xsl:if test='atom:title'>
+              <h4><a href='{atom:link[@rel="alternate"]/@href}'><xsl:value-of select='atom:title'/></a></h4>
+            </xsl:if>
+            <div class='entry'>
+              <xsl:choose><xsl:when test='atom:content'><xsl:apply-templates select='atom:content'/></xsl:when><xsl:when test='atom:summary'><xsl:apply-templates select='atom:summary'/></xsl:when></xsl:choose>
+              <p class='date'>
+                <a href='{atom:link[@rel="alternate"]/@href}'><xsl:if test='creator'>by <xsl:value-of select='creator'/> at </xsl:if><xsl:value-of select='atom:updated/@planet:format'/></a>
+              </p>
+            </div>
+          </xsl:for-each>
+
+        </div>
 
         <div class='sidebar'>
 
