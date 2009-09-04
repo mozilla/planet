@@ -91,7 +91,7 @@
                   <xsl:value-of select="atom:source/planet:name"/>
                 </a>
                 <xsl:if test="string-length(atom:title) &gt; 0">
-                  <xsl:text>&#x2014;</xsl:text>
+                  <xsl:text> &#x2014; </xsl:text>
                   <a href="{atom:link[@rel='alternate']/@href}">
                     <xsl:if test="atom:title/@xml:lang != @xml:lang">
                       <xsl:attribute name="xml:lang" select="{atom:title/@xml:lang}"/>
