@@ -51,8 +51,18 @@
         <div class='content'>
 
           <xsl:for-each select='atom:entry'>
-            <xsl:if test='not(preceding-sibling::atom:entry[substring(atom:updated,1,10) =substring(atom:updated,1,10)])'>
-              <h2><xsl:value-of select='substring-before(atom:updated/@planet:format,", ")'/>, <xsl:value-of select='substring-before(substring-after(atom:updated/@planet:format,", "), " ")'/></h2>
+            <!-- date header -->
+            <xsl:variable name="date" select="substring(atom:updated,1,10)"/>
+            <xsl:if test="not(preceding-sibling::atom:entry
+              [substring(atom:updated,1,10) = $date])">
+              <xsl:text>&#10;&#10;</xsl:text>
+              <h2>
+                <time datetime="{$date}">
+                  <xsl:value-of select="substring-before(atom:updated/@planet:format,', ')"/>
+                  <xsl:text>, </xsl:text>
+                  <xsl:value-of select="substring-before(substring-after(atom:updated/@planet:format,', '), ' ')"/>
+                </time>
+              </h2>
             </xsl:if>
 
             <xsl:if test='not(preceding-sibling::atom:entry/atom:source/atom:id =atom:source/atom:id)'>
@@ -92,11 +102,8 @@
                 <li class='opml'><a href='opml.xml'>OPML</a></li>
               </ul>
 
-              <p>Last update: <xsl:value-of select='atom:updated/@planet:format'/><br/>
-                 <em>All times are UTC.</em></p>
-          </div>
-
-          <div id='memes' class='main'>
+              <p>Last update: <time datetime="{atom:updated}" title="GMT">
+                 <xsl:value-of select='atom:updated/@planet:format'/></time></p>
           </div>
 
           <div class='main'>
