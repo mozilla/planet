@@ -13,7 +13,12 @@ well formed XHTML.
 Todo:
   * extension elements
 """
-import re, time, md5, sgmllib
+import re, time, sgmllib
+# The md5 module is deprecated in Python 2.5 
+try: 
+    from hashlib import md5 
+except ImportError: 
+    from md5 import md5 
 from xml.sax.saxutils import escape
 from xml.dom import minidom, Node
 from html5lib import liberalxmlparser
@@ -68,14 +73,14 @@ def id(xentry, entry):
         entry_id = entry.link
     elif entry.has_key("title") and entry.title:
         entry_id = (entry.title_detail.base + "/" +
-            md5.new(entry.title).hexdigest())
+            md5(entry.title).hexdigest())
     elif entry.has_key("summary") and entry.summary:
         entry_id = (entry.summary_detail.base + "/" +
-            md5.new(entry.summary).hexdigest())
+            md5(entry.summary).hexdigest())
     elif entry.has_key("content") and entry.content:
 
         entry_id = (entry.content[0].base + "/" + 
-            md5.new(entry.content[0].value).hexdigest())
+            md5(entry.content[0].value).hexdigest())
     else:
         return
 

@@ -23,7 +23,6 @@ __version__ = "$Rev: 227 $"
 
 import re 
 import sys 
-import md5
 import email
 import email.Utils
 import email.Message
@@ -38,10 +37,16 @@ import copy
 import calendar
 import time
 import random
-import sha
 import hmac
 from gettext import gettext as _
 from socket import gaierror
+
+# The md5 and sha modules are deprecated in Python 2.5
+try:
+    from hashlib import md5, sha1
+except ImportError:
+    from md5 import md5
+    from sha import new as sha1
 
 if sys.version_info >= (2,3):
     from iri2uri import iri2uri
@@ -163,7 +168,7 @@ def safename(filename):
         pass
     if isinstance(filename,unicode):
         filename=filename.encode('utf-8')
-    filemd5 = md5.new(filename).hexdigest()
+    filemd5 = md5(filename).hexdigest()
     filename = re_url_scheme.sub("", filename)
     filename = re_slash.sub(",", filename)
 
@@ -339,11 +344,11 @@ def _updateCache(request_headers, response_headers, content, cache, cachekey):
             cache.set(cachekey, text)
 
 def _cnonce():
-    dig = md5.new("%s:%s" % (time.ctime(), ["0123456789"[random.randrange(0, 9)] for i in range(20)])).hexdigest()
+    dig = md5("%s:%s" % (time.ctime(), ["0123456789"[random.randrange(0, 9)] for i in range(20)])).hexdigest()
     return dig[:16]
 
 def _wsse_username_token(cnonce, iso_now, password):
-    return base64.encodestring(sha.new("%s%s%s" % (cnonce, iso_now, password)).digest()).strip()
+    return base64.encodestring(sha1("%s%s%s" % (cnonce, iso_now, password)).digest()).strip()
 
 
 # For credentials we need two things, first 
@@ -417,7 +422,7 @@ class DigestAuthentication(Authentication):
 
     def request(self, method, request_uri, headers, content, cnonce = None):
         """Modify the request headers"""
-        H = lambda x: md5.new(x).hexdigest()
+        H = lambda x: md5(x).hexdigest()
         KD = lambda s, d: H("%s:%s" % (s, d))
         A2 = "".join([method, ":", request_uri])
         self.challenge['cnonce'] = cnonce or _cnonce() 
@@ -579,7 +584,7 @@ class FileCache:
     Not really safe to use if multiple threads or processes are going to 
     be running on the same cache.
     """
-    def __init__(self, cache, safe=safename): # use safe=lambda x: md5.new(x).hexdigest() for the old behavior
+    def __init__(self, cache, safe=safename): # use safe=lambda x: md5(x).hexdigest() for the old behavior
         self.cache = cache
         self.safe = safe
         if not os.path.exists(cache): 
