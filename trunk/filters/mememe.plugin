@@ -41,8 +41,8 @@ meme_cache = os.path.join(cache, 'memes')
 if not os.path.exists(meme_cache): os.makedirs(meme_cache)
 
 bom = config.bill_of_materials()
-if not 'images/tcosm11.gif' in bom:
-  bom.append('images/tcosm11.gif')
+if not 'img/tcosm11.gif' in bom:
+  bom.append('img/tcosm11.gif')
   config.parser.set('Planet', 'bill_of_materials', ' '.join(bom))
 
 all_links = {}
@@ -372,7 +372,7 @@ memes_ul = footer_top.addPrevSibling(footer.newChild(None, 'ul', None))
 a = memes.newChild(None, 'a', None)
 a.setProp('href', 'memes.atom')
 img = a.newChild(None, 'img', None)
-img.setProp('src', 'images/feed-icon-10x10.png')
+img.setProp('src', 'img/feed-icon.png')
 
 # collect the results
 log.debug("Fetch titles and collect the results")
@@ -433,7 +433,7 @@ for i in range(0,len(weighted_links)):
     a.setProp('href',tlink + quote_plus(link))
   a.setProp('title','cosmos')
   img = a.newChild(None, 'img', None)
-  img.setProp('src','images/tcosm11.gif')
+  img.setProp('src','img/tcosm11.gif')
 
   # main link
   a = li.newTextChild(None, 'a', title.strip().encode('utf-8'))
