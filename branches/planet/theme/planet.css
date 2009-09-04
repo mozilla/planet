@@ -216,6 +216,12 @@ h4 a {
   font-size: 1.3em; 
 }
 
+.sidebar .main ul.subscriptions a {
+  margin: 0;
+  padding: 0px;
+  display: inline;
+}
+
 .sidebar .main .bottom {
   height: 28px;
   width: 100%;
@@ -224,13 +230,13 @@ h4 a {
 }
 
 .sidebar .message {
-        cursor: help;
-        border-bottom: 1px dashed red;
+  cursor: help;
+  border-bottom: 1px dashed red;
 }
 
 .sidebar a.message:hover {
-        cursor: help;
-        background-color: #ffD0D0;
-        border: 1px dashed red !important;
-        text-decoration: none !important;
+  cursor: help;
+  background-color: #ffD0D0;
+  border: 1px dashed red !important;
+  text-decoration: none !important;
 }

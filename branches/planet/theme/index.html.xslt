@@ -139,7 +139,7 @@
                         </xsl:attribute>
                       </xsl:when>
                     </xsl:choose>
-                    <img src="img/feed-icon.png" alt="(feed)"/>
+                    <img src="img/feed-icon-10x10.png" alt="(feed)"/>
                   </a>
                   <xsl:text> </xsl:text>
 
