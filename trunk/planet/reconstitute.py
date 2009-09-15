@@ -14,16 +14,16 @@ Todo:
   * extension elements
 """
 import re, time, sgmllib
-# The md5 module is deprecated in Python 2.5 
-try: 
-    from hashlib import md5 
-except ImportError: 
-    from md5 import md5 
 from xml.sax.saxutils import escape
 from xml.dom import minidom, Node
-from html5lib import liberalxmlparser
+from html5lib import html5parser
 from html5lib.treebuilders import dom
 import planet, config
+
+try:
+  from hashlib import md5
+except:
+  from md5 import new as md5
 
 illegal_xml_chars = re.compile("[\x01-\x08\x0B\x0C\x0E-\x1F]")
 
@@ -164,7 +164,7 @@ def content(xentry, name, detail, bozo):
             bozo=1
 
     if detail.type.find('xhtml')<0 or bozo:
-        parser = liberalxmlparser.XHTMLParser(tree=dom.TreeBuilder)
+        parser = html5parser.HTMLParser(tree=dom.TreeBuilder)
         html = parser.parse(xdiv % detail.value, encoding="utf-8")
         for body in html.documentElement.childNodes:
             if body.nodeType != Node.ELEMENT_NODE: continue
