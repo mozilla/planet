@@ -206,6 +206,7 @@
               <li><a href='http://blog.mozillaonline.com/'>Mozilla Online (Chinese)</a></li>
               <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
               <li><a href='http://planet.firefox.com/'>Planet Firefox</a></li>
+              <li><a href='http://planet.firefox.com/mobile/'>Planet Firefox Mobile</a></li>
             </ul>
 
             <h2>Subscriptions</h2>
