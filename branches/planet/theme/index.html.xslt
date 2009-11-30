@@ -177,7 +177,11 @@
         </div>
 
         <div class='sidebar'>
-
+          <div class='disclaimer'>
+            <h2><xsl:value-of select='atom:title'/></h2>
+            <p>Collected here are the most recent blog posts from all over the Mozilla community.
+               The content here is unfiltered and uncensored, and represents the views of individual community members.</p>
+          </div>
           <div class='feeds'>
             <h2>Subscribe to Planet</h2>
               <p>Feeds:</p>

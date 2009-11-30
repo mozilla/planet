@@ -163,7 +163,8 @@ h4 a {
 	font-size: 70%;
 }
 
-.sidebar .feeds {
+.sidebar .feeds,
+.sidebar .disclaimer {
   padding-left: 15px;
 }
 
