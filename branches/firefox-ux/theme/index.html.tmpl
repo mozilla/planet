@@ -34,15 +34,14 @@
     ### doesn't know about the "face", "facewidth" and "faceheight" configuration
     ### variables, but makes them available to us anyway.
 
-    <h3><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+    <h3>
+        <a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR channel_name><TMPL_IF title>: <TMPL_VAR title></TMPL_IF>
+    </h3>
     <TMPL_IF channel_face>
     <img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
     </TMPL_IF>
     </TMPL_IF>
 
-    <TMPL_IF title>
-    <h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
-    </TMPL_IF>
     <div class="entry">
     <TMPL_VAR content>
     <p class="date">
