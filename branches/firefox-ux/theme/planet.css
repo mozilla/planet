@@ -1,70 +1,55 @@
+/* @override http://planet.firefox.com/ux/planet.css */
+
+body {
+    padding: 20px;
+    background: url(http://www.mozilla.com/img/tignish/template/background-feature.jpg) 50% -145px no-repeat;
+    text-align: left;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1 {
     font-size: 360%;
     color: #fff;
     margin: 20px 0 0 0;
 }
 
-li {
-    margin-bottom: 1em;
-}
-
-html {
-    background: url(http://www.mozilla.com/img/tignish/template/background-tile.png) repeat-x 50% -145px #fff;
-}
-
-body {
-    padding: 20px;
-    background: url(http://www.mozilla.com/img/tignish/template/background-feature.jpg) 50% -145px no-repeat;
-}
-
-ul,p,#main-feature {
-    width: 900px;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-}
-
-p {
-    clear: left;
-    padding-top: 50px;
-}
-
-ul li {
-    float: left;
-    padding: 20px 50px 20px 10px;
-    background: none;
-    max-width: 210px;
-}
-
-ul li a {
-     font-weight: bold;
-    font-family: verdana, sans-serif;
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    display: block;
-    padding-left: 22px;
-    margin-bottom: 5px;
-}
-
-ul li small {display: block;
-    font-size: 65%;
-    font-family: verdana, sans-serif;
-    margin-top: 3px;
-}
 
 #main-feature {
     padding: 0;
-    background: url(firefox.png) 0 0 no-repeat;
-}
-
-#main-feature p {
-    margin: 0 0 55px 0;
-    padding: 0;
-    font-size: 137%;
+    background: url("http://nightly.mozilla.org/firefox.png") 0 0 no-repeat;
 }
 
 #main-feature p, #main-feature h1 {
     margin-left: 120px;
-    width: auto;
+
+}
+
+#main-feature p {
+	width: 100%;
+	margin-top: 0;
+}
+
+abbr {
+	border: none;
+}
+
+hr {
+    height: 1px; 
+	border: none;
+    color: #ccc; 
+    background-color: #ccc; 
+    margin: 2em auto;
+	width: 50%;
+}
+
+dl {
+	margin: 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 1em;
 }
