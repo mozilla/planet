@@ -211,6 +211,7 @@
               <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
               <li><a href='http://planet.firefox.com/'>Planet Firefox</a></li>
               <li><a href='http://planet.firefox.com/mobile/'>Planet Firefox Mobile</a></li>
+              <li><a href='http://ux.firefox.com/'>Planet UX</a></li>
             </ul>
 
             <h2>Subscriptions</h2>
