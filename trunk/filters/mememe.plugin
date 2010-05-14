@@ -372,7 +372,7 @@ memes_ul = footer_top.addPrevSibling(footer.newChild(None, 'ul', None))
 a = memes.newChild(None, 'a', None)
 a.setProp('href', 'memes.atom')
 img = a.newChild(None, 'img', None)
-img.setProp('src', 'img/feed-icon.png')
+img.setProp('src', 'img/feed-icon-10x10.png')
 
 # collect the results
 log.debug("Fetch titles and collect the results")
