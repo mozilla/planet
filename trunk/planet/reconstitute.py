@@ -279,6 +279,11 @@ def reconstitute(feed, entry):
     date(xentry, 'updated', entry_updated(feed.feed, entry, time.gmtime()))
     date(xentry, 'published', entry.get('published_parsed',None))
 
+    if entry.has_key('dc_date.taken'):
+        date_Taken = createTextElement(xentry, '%s:%s' % ('dc','date_Taken'), '%s' % entry.get('dc_date.taken', None))
+        date_Taken.setAttribute('xmlns:%s' % 'dc', 'http://purl.org/dc/elements/1.1/')
+        xentry.appendChild(date_Taken)
+
     for tag in entry.get('tags',[]):
         category(xentry, tag)
 
@@ -304,6 +309,21 @@ def reconstitute(feed, entry):
     if entry.has_key('geo_lat') and \
         entry.has_key('geo_long'):
         location(xentry, (float)(entry.get('geo_long',None)), (float)(entry.get('geo_lat',None)))
+    if entry.has_key('georss_point'):
+        coordinates = re.split('[,\s]', entry.get('georss_point'))
+        location(xentry, (float)(coordinates[1]), (float)(coordinates[0]))
+    elif entry.has_key('georss_line'):
+        coordinates = re.split('[,\s]', entry.get('georss_line'))
+        location(xentry, (float)(coordinates[1]), (float)(coordinates[0]))
+    elif entry.has_key('georss_circle'):
+        coordinates = re.split('[,\s]', entry.get('georss_circle'))
+        location(xentry, (float)(coordinates[1]), (float)(coordinates[0]))
+    elif entry.has_key('georss_box'):
+        coordinates = re.split('[,\s]', entry.get('georss_box'))
+        location(xentry, ((float)(coordinates[1])+(float)(coordinates[3]))/2, ((float)(coordinates[0])+(float)(coordinates[2]))/2)
+    elif entry.has_key('georss_polygon'):
+        coordinates = re.split('[,\s]', entry.get('georss_polygon'))
+        location(xentry, (float)(coordinates[1]), (float)(coordinates[0]))
 
     # author / contributor
     author_detail = entry.get('author_detail',{})

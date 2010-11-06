@@ -214,6 +214,7 @@ class html(sgmllib.SGMLParser):
     self.feedurl = ""
     self.intitle = False
 
+    url = url.split('#')[0]
     headers = check_cache(url)
 
     try:
@@ -385,6 +386,7 @@ from urllib import quote_plus
 for i in range(0,len(weighted_links)):
   weight, link, updated = weighted_links[i]
   if link in spam: continue
+  if unique_votes(all_links[link]) < 2: continue
 
   # ensure that somebody new points to this entry.  This guards against
   # groups of related links which several posts point to all.
@@ -493,6 +495,10 @@ for i in range(0,len(weighted_links)):
 
   count = count + 1
   if count >= 10: break
+
+# remove ul when there are no memes
+if memes_ul.lsCountNode() < 1:
+  memes_ul.unlinkNode()
 
 log.info("Writing " + MEMES_ATOM)
 output=open(MEMES_ATOM,'w')
