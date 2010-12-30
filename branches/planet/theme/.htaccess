@@ -1,6 +1,10 @@
 ExpiresActive on
 ExpiresDefault "access plus 5 minutes"
 
+<FilesMatch "\.(gif|jpe?g|png)$">
+  ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
 AddType text/xml rss ffkar opml soap sn2 tb tbrss wsdl xss
 AddType text/plain txt esf
 AddType application/atom+xml atom
@@ -39,4 +43,3 @@ RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
 AddDefaultCharset UTF-8
 AddCharset utf-8 atom rss ffkar soap tb tbrss wsdl xss html
 AddCharset utf-8 txt esf xhtml rss2 rss21 rdf cdf
-
