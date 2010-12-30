@@ -299,7 +299,7 @@
 
         <div id='footer'>
           <div id='footer-content'>
-            <p>Maintained by the <a href='https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=planet.mozilla.org'>Planet Mozilla Module Team</a>. Powered by <a href='http://www.intertwingly.net/code/venus/'>Planet Venus</a>. <a href='http://www.mozilla.org/about/policies/privacy-policy.html'>Privacy Policy</a>.</p>
+            <p>Maintained by the <a href='https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=planet.mozilla.org'>Planet Mozilla Module Team</a>. Powered by <a href='http://www.intertwingly.net/code/venus/'>Planet Venus</a>. View our <a href='http://www.mozilla.org/about/policies/privacy-policy.html'>Privacy Policy</a>.</p>
           </div>
         </div>
 
