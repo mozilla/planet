@@ -16,31 +16,29 @@ AddType application/x-netcdf cdf
 
 RewriteEngine on
 
-<Location />
-  # start with the assumption that everything is xhtml
-  AddType application/xhtml+xml html
-  RewriteRule ^([^.]*|.*\.html\d?)$ - [T=application/xhtml+xml;charset=utf-8]
+# start with the assumption that everything is xhtml
+AddType application/xhtml+xml html
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=application/xhtml+xml;charset=utf-8]
 
-  # respect requests to not send xhtml
-  RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
-  RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+# respect requests to not send xhtml
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
 
-  # standards based backwards compatibility - for tools like Lynx
-  RewriteCond %{HTTP_ACCEPT} text/html
-  RewriteCond %{HTTP_ACCEPT} !text/html\s*;\s*q=0\.?0*(\s|,|$)
-  RewriteCond %{HTTP_ACCEPT} !(application|\*)/(xhtml\+xml|\*)
-  RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+# standards based backwards compatibility - for tools like Lynx
+RewriteCond %{HTTP_ACCEPT} text/html
+RewriteCond %{HTTP_ACCEPT} !text/html\s*;\s*q=0\.?0*(\s|,|$)
+RewriteCond %{HTTP_ACCEPT} !(application|\*)/(xhtml\+xml|\*)
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
 
-  # MSIE accomodation: simple click
-  RewriteCond %{HTTP_ACCEPT} image/gif
-  RewriteCond %{HTTP_ACCEPT} !html
-  RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+# MSIE accomodation: simple click
+RewriteCond %{HTTP_ACCEPT} image/gif
+RewriteCond %{HTTP_ACCEPT} !html
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
 
-  # MSIE accomodation: open in new tab/window
-  RewriteCond %{HTTP_ACCEPT} ^\*/\*$
-  RewriteCond %{HTTP_USER_AGENT} MSIE
-  RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
-</Location>
+# MSIE accomodation: open in new tab/window
+RewriteCond %{HTTP_ACCEPT} ^\*/\*$
+RewriteCond %{HTTP_USER_AGENT} MSIE
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
 
 AddDefaultCharset UTF-8
 AddCharset utf-8 atom rss ffkar soap tb tbrss wsdl xss html
