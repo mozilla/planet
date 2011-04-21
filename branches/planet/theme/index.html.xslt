@@ -206,7 +206,7 @@
             <h2>Other Planets</h2>
             <ul class='planets'>
               <li><a href='http://education.mozilla.org/planet/'>Mozilla Education</a></li>
-              <li><a href='http://planet.mozinterns.net/'>Mozilla Interns</a></li>
+              <li><a href='http://planet.mozilla.org/interns/'>Mozilla Interns</a></li>
               <li><a href='http://planet.mozillamessaging.com/'>Mozilla Messaging</a></li>
               <li><a href='http://blog.mozillaonline.com/'>Mozilla Online (Chinese)</a></li>
               <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
