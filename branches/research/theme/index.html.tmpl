@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+### Fancy Planet HTML template.
+### 
+### When combined with the stylesheet and images in the output/ directory
+### of the Planet source, this gives you a much prettier result than the
+### default examples template and demonstrates how to use the config file
+### to support things like faces
+### 
+### For documentation on the more boring template elements, see
+### examples/config.ini and examples/index.html.tmpl in the Planet source.
+
+<head>
+<title><TMPL_VAR name></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
+<link rel="stylesheet" href="planet.css" type="text/css">
+<link rel="icon" href="http://www.mozilla.org/images/mozilla-16.png" type="image/png">
+<TMPL_IF feedtype>
+<link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
+</TMPL_IF>
+</head>
+
+<body>
+
+<div class="header">
+<h1><TMPL_VAR name></h1>
+</div>
+
+<div class="content">
+
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+<h2><TMPL_VAR new_date></h2>
+</TMPL_IF>
+
+<TMPL_IF new_channel>
+
+### Planet provides template variables for *all* configuration options for
+### the channel (and defaults), even if it doesn't know about them.  We
+### exploit this here to add hackergotchi faces to our channels.  Planet
+### doesn't know about the "face", "facewidth" and "faceheight" configuration
+### variables, but makes them available to us anyway.
+
+<h3><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+<TMPL_IF channel_face>
+<img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
+</TMPL_IF>
+</TMPL_IF>
+
+<TMPL_IF title>
+<h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
+</TMPL_IF>
+<div class="entry">
+<TMPL_VAR content>
+<p class="date">
+<a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF creator>by <TMPL_VAR creator> at </TMPL_IF><TMPL_VAR date></a>
+</p>
+</div>
+</TMPL_LOOP>
+
+</div>
+
+<div class="sidebar">
+
+<div>
+Feeds: <a href="atom.xml">Atom</a>, <a href="rss20.xml">RSS 2.0</a>, <a href="rss10.xml">RSS 1.0</a><br>
+Subscription list: <a href="foafroll.xml">FOAF</a>, <a href="opml.xml">OPML</a>
+<br><br>
+Last update: <TMPL_VAR date><br>
+<em>All times are UTC.</em>
+</div>
+
+<div>
+<h2>Subscriptions</h2>
+<ul>
+<TMPL_LOOP Channels>
+<li><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a> <a href="<TMPL_VAR url ESCAPE="HTML">">(feed)</a></li>
+</TMPL_LOOP>
+</ul>
+</div>
+
+</div>
+
+  <div id="footer">
+   <ul id="bn">
+    <li><a href="http://www.mozillafoundation.org/">Mozilla Foundation</a></li>
+    <li><a href="http://www.mozillazine.org/">MozillaZine.org</a></li>
+    <li><a href="http://www.mozilla.org/get-involved.html">Get Involved!</a></li>
+   </ul>
+   <p>Maintained by <a href="mailto:<TMPL_VAR owner_email>"><TMPL_VAR owner_name></a>, powered by <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a></p>
+  </div>
+</body>
+
+</html>
