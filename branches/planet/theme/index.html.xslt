@@ -209,6 +209,7 @@
               <li><a href='http://planet.mozilla.org/interns/'>Mozilla Interns</a></li>
               <li><a href='http://planet.mozillamessaging.com/'>Mozilla Messaging</a></li>
               <li><a href='http://blog.mozillaonline.com/'>Mozilla Online (Chinese)</a></li>
+              <li><a href='http://planet.mozilla.org/research/'>Mozilla Research</a></li>
               <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
               <li><a href='http://planet.firefox.com/'>Planet Firefox</a></li>
               <li><a href='http://planet.firefox.com/mobile/'>Planet Firefox Mobile</a></li>
