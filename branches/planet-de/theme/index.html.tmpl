@@ -1,35 +1,43 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-### Fancy Planet HTML template.
-### 
-### When combined with the stylesheet and images in the output/ directory
-### of the Planet source, this gives you a much prettier result than the
-### default examples template and demonstrates how to use the config file
-### to support things like faces
-### 
-### For documentation on the more boring template elements, see
-### examples/config.ini and examples/index.html.tmpl in the Planet source.
-
+<!DOCTYPE html>
+<html dir="ltr" lang="de-DE" id="planet-mozilla-de">
 <head>
-<title><TMPL_VAR name></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
-<link rel="stylesheet" href="planet.css" type="text/css">
-<link rel="icon" href="http://www.mozilla.org/images/mozilla-16.png" type="image/png">
-<TMPL_IF feedtype>
-<link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
-</TMPL_IF>
+	<title><TMPL_VAR name></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
+	<link rel="stylesheet" href="planet.css" type="text/css">
+	<link rel="icon" href="http://www.mozilla.org/images/mozilla-16.png" type="image/png">
+	<TMPL_IF feedtype>
+		<link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
+	</TMPL_IF>
 </head>
 
 <body>
+<div id="wrapper">
+    <header class="clearfix">
+        <nav id="headerbar" class="clearfix">
+            <ul>
+                <li><a href="http://www.mozilla-europe.de">mozilla-europe.org</a></li>
+                <li><a href="http://www.mozilla.org">mozilla.org</a></li>
+            </ul>
+        </nav>
+        <div id="header-wrapper">
+        	<a class="logo" href="http://www.mozilla.de/" title="Zur Startseite wechseln">
+        	    <img src="http://www.mozilla.de/img/logos/mozilla.png" alt="Mozilla-Logo" />
+    	    </a>
+    	    <nav id="navigation">
+                <ul>
+                    <li><a href="http://www.mozilla.de/mitmachen/" title="Entdecke Möglichkeiten bei Mozilla mitzumachen">Mitmachen!</a></li>
+                    <li><a href="http://www.mozilla.de/ueber/" title="Mehr über Mozilla im deutschsprachigen Raum erfahren">Über Uns</a></li>
+                    <li><a href="http://planet.mozilla.de/" title="Neuigkeiten aus der deutschsprachigen Mozilla-Welt lesen">Planet Mozilla</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="header">
+    <div id="content-wrapper" class="clearfix"> 
+        <section id="content">
+
 <h1><TMPL_VAR name></h1>
-</div>
-
-<div class="content">
-
 <TMPL_LOOP Items>
 <TMPL_IF new_date>
 <h2><TMPL_VAR new_date></h2>
@@ -49,48 +57,45 @@
 </TMPL_IF>
 </TMPL_IF>
 
-<TMPL_IF title>
-<h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
-</TMPL_IF>
-<div class="entry">
-<TMPL_VAR content>
-<p class="date">
-<a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF creator>by <TMPL_VAR creator> at </TMPL_IF><TMPL_VAR date></a>
-</p>
-</div>
+<article class="entry">
+	<TMPL_IF title>
+		<h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
+	</TMPL_IF>
+	<TMPL_VAR content>
+	<p class="date"><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF creator>by <TMPL_VAR creator> at </TMPL_IF><TMPL_VAR date></a></p>
+</article>
 </TMPL_LOOP>
 
-</div>
+</section>
 
-<div class="sidebar">
+<aside id="sidebar">
 
-<div>
-Feeds: <a href="atom.xml">Atom</a>, <a href="rss20.xml">RSS 2.0</a>, <a href="rss10.xml">RSS 1.0</a><br>
-Subscription list: <a href="foafroll.xml">FOAF</a>, <a href="opml.xml">OPML</a>
-<br><br>
-Last update: <TMPL_VAR date><br>
-<em>All times are UTC.</em>
-</div>
-
-<div>
-<h2>Subscriptions</h2>
+<h2>Feeds</h2>
+<p><a href="atom.xml">Atom</a>, <a href="rss20.xml">RSS 2.0</a>, <a href="rss10.xml">RSS 1.0</a></p>
+<h2>Abo-Liste</h2>
+<p><a href="foafroll.xml">FOAF</a>, <a href="opml.xml">OPML</a></p>
+<h2>Letzte Aktualisierung</h2>
+<p><TMPL_VAR date></p>
+<p><em>Alle Zeiten sind als UTC-Zeit angegeben.</em></p>
+<h2>Abonnements</h2>
 <ul>
 <TMPL_LOOP Channels>
-<li><a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a> <a href="<TMPL_VAR url ESCAPE="HTML">">(feed)</a></li>
+<li>
+	<a href="<TMPL_VAR url ESCAPE="HTML">"><img alt="Feed" src="http://www.mozilla.de/img/icons/feed.png" /></a>
+	<a href="<TMPL_VAR link ESCAPE="HTML">" title="<TMPL_VAR title ESCAPE="HTML">"><TMPL_VAR name></a>
+</li>
 </TMPL_LOOP>
 </ul>
+
+</aside>
 </div>
 
+<footer>
+    <div id="footer-wrapper">
+   <p>Die Seite <em>planet.mozilla.de</em> wird von <a href="mailto:<TMPL_VAR owner_email>"><TMPL_VAR owner_name></a> gewartet und von <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a> angetrieben.</p>
+    </div>
+</footer>
+    
 </div>
-
-  <div id="footer">
-   <ul id="bn">
-    <li><a href="http://www.mozillafoundation.org/">Mozilla Foundation</a></li>
-    <li><a href="http://www.mozillazine.org/">MozillaZine.org</a></li>
-    <li><a href="http://www.mozilla.org/get-involved.html">Get Involved!</a></li>
-   </ul>
-   <p>Maintained by <a href="mailto:<TMPL_VAR owner_email>"><TMPL_VAR owner_name></a>, powered by <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a></p>
-  </div>
 </body>
-
 </html>
