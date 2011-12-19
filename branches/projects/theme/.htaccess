@@ -1,0 +1,45 @@
+ExpiresActive on
+ExpiresDefault "access plus 5 minutes"
+
+<FilesMatch "\.(gif|jpe?g|png)$">
+  ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
+AddType text/xml rss ffkar opml soap sn2 tb tbrss wsdl xss
+AddType text/plain txt esf
+AddType application/atom+xml atom
+AddType application/xhtml+xml xhtml
+AddType application/xhtml+xml html5
+AddType application/rss+xml rss2 rss21 rss11
+AddType application/rdf+xml rdf
+AddType application/x-netcdf cdf
+
+RewriteEngine on
+
+# start with the assumption that everything is xhtml
+AddType application/xhtml+xml html
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=application/xhtml+xml;charset=utf-8]
+
+# respect requests to not send xhtml
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml\s*;\s*q=0\.?0*(\s|,|$)
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+
+# standards based backwards compatibility - for tools like Lynx
+RewriteCond %{HTTP_ACCEPT} text/html
+RewriteCond %{HTTP_ACCEPT} !text/html\s*;\s*q=0\.?0*(\s|,|$)
+RewriteCond %{HTTP_ACCEPT} !(application|\*)/(xhtml\+xml|\*)
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+
+# MSIE accomodation: simple click
+RewriteCond %{HTTP_ACCEPT} image/gif
+RewriteCond %{HTTP_ACCEPT} !html
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+
+# MSIE accomodation: open in new tab/window
+RewriteCond %{HTTP_ACCEPT} ^\*/\*$
+RewriteCond %{HTTP_USER_AGENT} MSIE
+RewriteRule ^([^.]*|.*\.html\d?)$ - [T=text/html;charset=utf-8]
+
+AddDefaultCharset UTF-8
+AddCharset utf-8 atom rss ffkar soap tb tbrss wsdl xss html
+AddCharset utf-8 txt esf xhtml rss2 rss21 rdf cdf

@@ -1,0 +1,246 @@
+* {
+  line-height: 1.4;
+  padding: 0;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  background: #ffffff url('img/background.jpg') no-repeat scroll left top;
+  color: #000;
+}
+
+a {
+  color: #148cb5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #148cb5;
+  text-decoration: underline;
+}
+
+#header {
+  margin: 10px 0 0 96px;
+  height: 101px;
+  background: url('img/header-bg.jpg');
+}
+
+#header #dino {
+  background: url('img/header-dino.jpg') no-repeat;
+  height: 101px;
+  width: 300px;
+}
+
+#header h1 {
+  padding: 0;
+  margin: 0;
+  background: transparent url('img/logo.png') no-repeat 20px 35px;
+  z-index: 1;
+  height: 101px;
+}
+
+#header h1 a {
+  display: block;
+  text-indent: -9999px;
+  background: transparent url('img/logo.png') no-repeat 20px 35px;
+  overflow: hidden;
+  width: 265px;
+  height: 101px;
+}
+
+#utility {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 62.5%;
+  margin: 0.8em 0 0.7em 30px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 30px 0 0;
+}
+
+#utility * {
+  display: inline;
+}
+
+#utility p {
+  margin-right: -20px;
+}
+
+#utility strong {
+  color: #000;
+  font-size: 11px;
+}
+
+#utility ul {
+  margin-left: 10px;
+}
+
+#utility li {
+  background: transparent url('img/bullet_utility.png') no-repeat 4px center;
+  padding-left: 16px;
+  font-size: 11px;
+}
+
+#utility li:first-child {
+  background: none;
+  padding: 0;
+} /* @todo: needs ie fixing */
+
+.main-content {
+  margin-left: 116px;
+  margin-right: 260px;
+}
+
+h2 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 1.75em;
+  color: #b72822;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+h3 a {
+  color: black;
+}
+
+h4 {
+  margin: 0 0 0 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+h4 a {
+  color: black;
+}
+
+.entry {
+  margin-left: 15px;
+}
+
+.news .permalink {
+  text-align: right;
+}
+
+#footer {
+  background-image: url('img/footer.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 207px;
+}
+
+#footer-content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  max-width: 1150px;
+}
+
+#footer-content p {
+  text-align: center;
+  padding: 5px;
+  background-color: #2a2a2a;
+  color: #999999;
+  font-size: 0.9em;
+}
+
+.sidebar {
+  position: absolute;
+  top: 135px;
+  right: 0px;
+	width: 230px;
+	margin: 0 15px 0 0;
+	padding: 20px 0 0 0;
+	font-size: 70%;
+}
+
+.sidebar .feeds,
+.sidebar .disclaimer {
+  padding-left: 15px;
+}
+
+.sidebar .feeds p {
+  padding: 0;
+  margin: 5px 0 0 0;
+} 
+.sidebar .feeds ul {
+  padding-left: 10px;
+}
+.sidebar .feeds li {
+  margin: 0;
+  padding: 0px;
+  display: inline;
+}
+
+.sidebar .feeds li {
+  background-image: url('img/feed-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 10px 3px 15px;
+  margin: .4em 0;
+}
+
+.sidebar .feeds li.opml {
+  background-image: url('img/opml-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 10px 3px 15px;
+  margin: .4em 0;
+}
+
+.sidebar .feeds li.foaf {
+  background-image: url('img/foaf-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 10px 3px 24px;
+  margin: .4em 0;
+}
+
+.sidebar .main {
+  background: transparent url('img/sidebar-back.png') no-repeat left top;
+  /*border-top:5px solid #0095B9;*/
+  /*min-height:438px; padding:20px;*/
+  padding: 15px 0 0 15px;
+}
+
+.sidebar .main ul.planets {
+  list-style-image:url('img/world.png');
+  padding-left: 35px;
+}
+
+.sidebar .main ul.planets li {
+  font-size: 1.3em; 
+}
+
+.sidebar .main ul.subscriptions li img {
+  border: 0;
+}
+
+.sidebar .main .bottom {
+  height: 28px;
+  width: 100%;
+  background: transparent url('img/sidebar-bottom.png') no-repeat 50% bottom;
+  padding-bottom: 30px;
+}
+
+.sidebar .message {
+  cursor: help;
+  border-bottom: 1px dashed red;
+}
+
+.sidebar a.message:hover {
+  cursor: help;
+  background-color: #ffD0D0;
+  border: 1px dashed red !important;
+  text-decoration: none !important;
+}
