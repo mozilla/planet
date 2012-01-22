@@ -205,6 +205,7 @@
           <div class='main'>
             <h2>Other Planets</h2>
             <ul class='planets'>
+              <li><a href='http://planet.mozilla.org/projects/'>Projects</a></li>
               <li><a href='http://education.mozilla.org/planet/'>Mozilla Education</a></li>
               <li><a href='http://planet.mozilla.org/interns/'>Mozilla Interns</a></li>
               <li><a href='http://planet.mozillamessaging.com/'>Mozilla Messaging</a></li>
