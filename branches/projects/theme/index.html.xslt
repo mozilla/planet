@@ -179,8 +179,8 @@
         <div class='sidebar'>
           <div class='disclaimer'>
             <h2><xsl:value-of select='atom:title'/></h2>
-            <p>Collected here are the most recent blog posts from all over the Mozilla community.
-               The content here is unfiltered and uncensored, and represents the views of individual community members.
+            <p>Collected here are the most recent blog posts from projects all over the Mozilla community.
+               The content here is unfiltered and uncensored, and represents the views of community members.
                Individual posts are owned by their authors -- see original source for licensing information.</p>
           </div>
           <div class='feeds'>
@@ -205,6 +205,7 @@
           <div class='main'>
             <h2>Other Planets</h2>
             <ul class='planets'>
+              <li><a href='http://planet.mozilla.org/'>Planet Mozilla</a></li>
               <li><a href='http://education.mozilla.org/planet/'>Mozilla Education</a></li>
               <li><a href='http://planet.mozilla.org/interns/'>Mozilla Interns</a></li>
               <li><a href='http://planet.mozillamessaging.com/'>Mozilla Messaging</a></li>
