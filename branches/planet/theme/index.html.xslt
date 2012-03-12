@@ -179,7 +179,7 @@
 
         </div>
 
-        <div id='sidebar' class='sidebar'>
+        <div class='sidebar'>
           <div class='disclaimer'>
             <h2><xsl:value-of select='atom:title'/></h2>
             <p>Collected here are the most recent blog posts from all over the Mozilla community.
@@ -220,6 +220,8 @@
               <li><a href='http://ux.firefox.com/'>Planet UX</a></li>
               <li><a href='http://quality.mozilla.org/community'>Planet QMO</a></li>
             </ul>
+
+            <div id='sidebar'/>
 
             <h2>Subscriptions</h2>
             <ul class='subscriptions'>
@@ -297,9 +299,8 @@
                 </li>
               </xsl:for-each>
             </ul>
-        </div>
-
-        <div class='bottom'/>
+            <div class='bottom'/>
+          </div>
         </div>
 
         <div id='footer'>
