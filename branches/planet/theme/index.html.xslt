@@ -22,7 +22,7 @@
           <link rel='alternate' href='{atom:link[@rel="self"]/@href}'
             title='{atom:title/text()}' type='{atom:link[@rel="self"]/@type}'/>
         </xsl:if>
-        <script defer type="text/javascript" src="personalize.js">
+        <script defer="defer" type="text/javascript" src="personalize.js">
           <xsl:comment><!--HTML Compatibility--></xsl:comment>
         </script>
       </head>
