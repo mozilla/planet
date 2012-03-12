@@ -176,7 +176,7 @@
 
         </div>
 
-        <div class='sidebar'>
+        <div id='sidebar' class='sidebar'>
           <div class='disclaimer'>
             <h2><xsl:value-of select='atom:title'/></h2>
             <p>Collected here are the most recent blog posts from all over the Mozilla community.
