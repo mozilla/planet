@@ -25,6 +25,9 @@
         <script defer="defer" type="text/javascript" src="personalize.js">
           <xsl:comment><!--HTML Compatibility--></xsl:comment>
         </script>
+        <script defer="defer" type="text/javascript" src="query.js">
+          <xsl:comment><!--HTML Compatibility--></xsl:comment>
+        </script>
       </head>
 
       <body>
@@ -294,9 +297,9 @@
                 </li>
               </xsl:for-each>
             </ul>
+        </div>
 
-            <div class='bottom'/>
-          </div>
+        <div class='bottom'/>
         </div>
 
         <div id='footer'>
