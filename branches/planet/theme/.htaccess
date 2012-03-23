@@ -14,7 +14,8 @@ AddType application/rss+xml rss2 rss21 rss11
 AddType application/rdf+xml rdf
 AddType application/x-netcdf cdf
 
-Header append Vary Accept, User-Agent
+Header append Vary Accept
+Header append Vary User-Agent
 
 RewriteEngine on
 
