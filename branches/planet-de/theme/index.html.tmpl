@@ -6,35 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
 	<link rel="stylesheet" href="planet.css" type="text/css">
-	<link rel="icon" href="http://www.mozilla.org/images/mozilla-16.png" type="image/png">
+	<link rel="icon" href="http://mozilla.de/favicon.ico" type="image/ico">
 	<TMPL_IF feedtype>
 		<link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
 	</TMPL_IF>
     <!--[if lte IE 8]>
         <script src="http://mozilla.de/js/html5.js" type="text/javascript"></script>
     <![endif]-->
+        <script type="text/javascript" src="http://mozilla.de/tabzilla.js"></script>
+            <link href="http://mozilla.de/tabzilla.css" rel="stylesheet" />
 </head>
 
 <body id="planet">
+<div id="back">
+<a href="/" id="tabzilla">mozilla</a>
 <div id="wrapper">
+    <nav id="headerbar" class="clearfix">
+        <ul>
+            <li><a href="http://www.mozilla.com/de/firefox/">Firefox</a></li>
+            <li><a href="http://www.thunderbird-mail.de/">Thunderbird</a></li>
+            <li><a href="http://www.mozilla.org">mozilla.org</a></li>
+        </ul>
+    </nav>
+		<div style="text-align: center;">
+        	<h1>Wir sind <a href="http://mozilla.de/"><img src="../mozillade.png" width="492" height="85" alt="mozilla.de"/></a></h1>
+            <h2>Die deutschsprachige Mozilla-Community</h2>
+		</div>
     <header>
-        <nav id="headerbar" class="clearfix">
-            <ul>
-                <li><a href="http://www.mozilla-europe.de">mozilla-europe.org</a></li>
-                <li><a href="http://www.mozilla.org">mozilla.org</a></li>
-            </ul>
-        </nav>
         <div id="header-wrapper" class="clearfix">
-        	<a class="logo" href="http://www.mozilla.de/" title="Zur Startseite wechseln">
-        	    <img src="http://www.mozilla.de/img/logos/mozilla.png" alt="Mozilla-Logo" />
-    	    </a>
+
     	    <nav id="navigation">
                 <ul>
-                    <li><a href="http://mozilla.de" title="Zur Startseite wechseln">Start</a></li>
-                    <li><a href="http://mozilla.de/mitmachen/" title="Möglichkeiten bei Mozilla mitzumachen">Mitmachen!</a></li>
-                    <li><a href="http://mozilla.de/kalender/" title="Community-Kalender">Kalender</a></li>
-                    <li><a href="http://mozilla.de/ueber/" title="Mehr über Mozilla im deutschsprachigen Raum erfahren">Über Uns</a></li>
-                    <li><span class="aktiv">Planet Mozilla (de)</span></li>
+					<li><a href="http://www.mozilla.de/" title="mozilla.de">Start</a></li>
+					<li><a href="http://www.mozilla.de/hilfe/" title="Haben Sie Probleme mit Firefox & Co.? Wir helfen Ihnen weiter!">Hilfe</a></li>
+					<li><a href="http://www.mozilla.de/mitmachen/" title="Möglichkeiten, bei Mozilla mitzumachen">Mitmachen!</a></li>
+					<li><a href="http://www.mozilla.de/kalender/" title="Community-Kalender">Events</a></li>
+					<li><a href="http://www.mozilla.de/ueber/" title="Mehr über Mozilla im deutschsprachigen Raum erfahren">Über uns</a></li>
+                    <li><a href="http://planet.mozilla.de" class="active" title="Neuigkeiten aus der deutschsprachigen Mozilla-Welt lesen">Planet Mozilla (de)</a></li>
                 </ul>
             </nav>
         </div>
@@ -77,11 +85,11 @@
 <aside id="sidebar">
 
 <h2>Feeds</h2>
-<p><a href="atom.xml">Atom</a>, <a href="rss20.xml">RSS 2.0</a>, <a href="rss10.xml">RSS 1.0</a></p>
+<p class="sb"><a href="atom.xml">Atom</a>, <a href="rss20.xml">RSS 2.0</a>, <a href="rss10.xml">RSS 1.0</a></p>
 <h2>Abo-Liste</h2>
-<p><a href="foafroll.xml">FOAF</a>, <a href="opml.xml">OPML</a></p>
+<p class="sb"><a href="foafroll.xml">FOAF</a>, <a href="opml.xml">OPML</a></p>
 <h2>Letzte Aktualisierung</h2>
-<p><TMPL_VAR date></p>
+<p class="sb"><TMPL_VAR date></p>
 <p><em>Alle Zeiten sind als UTC-Zeit angegeben.</em></p>
 <h2>Abonnements</h2>
 <ul>
@@ -95,12 +103,15 @@
 
 </aside>
 </div>
+</div>
 
 <footer>
     <div id="footer-wrapper">
-	   <p>Die Seite <em>planet.mozilla.de</em> wird von <a href="mailto:<TMPL_VAR owner_email>"><TMPL_VAR owner_name></a> gewartet und von <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a> angetrieben.</p>
-       <p class="copyright">Sofern nicht anders vermerkt, steht der Inhalt dieser Seite unter der <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-Alike License v3.0</a> oder einer späteren Version. Mozilla®, mozilla.org®, Thunderbird®, SeaMonkey® und das Mozilla-Logo™ sind <a href="http://www.mozilla.org/foundation/trademarks/list.html">eingetragene Markenzeichen</a> der Mozilla Foundation.</p>
-    </div>
+    <a href="http://mozilla.org/" class="footer-logo"><img src="http://www.mozilla.org/media/img/sandstone/footer-mozilla.png" alt="mozilla"></a>
+	   <p class="text">Die Seite planet.mozilla.de wird von <a href="mailto:<TMPL_VAR owner_email>"><TMPL_VAR owner_name></a> gewartet und von <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a> angetrieben.
+       Sofern nicht anders vermerkt, steht der Inhalt dieser Seite unter der <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-Alike License v3.0</a> oder einer späteren Version. Mozilla®, mozilla.org®, Thunderbird®, SeaMonkey® und das Mozilla-Logo™ sind <a href="http://www.mozilla.org/foundation/trademarks/list.html">eingetragene Markenzeichen</a> der Mozilla Foundation.
+    </p>
+		<p class="space">    </p></div>
 </footer>
     
 </div>
