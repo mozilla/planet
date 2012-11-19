@@ -205,7 +205,6 @@
           <div class='main'>
             <h2>Other Planets</h2>
             <ul class='planets'>
-            <ul class='planets'>
               <li><a href='http://planet.mozilla.org/'>Planet Mozilla</a></li>
               <li><a href='http://planet.firefox.com/'>Planet Firefox</a></li>
               <li><a href='http://planet.firefox.com/mobile/'>Planet Firefox Mobile</a></li>
