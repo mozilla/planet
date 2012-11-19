@@ -209,17 +209,17 @@
             <h2>Other Planets</h2>
             <ul class='planets'>
               <li><a href='http://planet.mozilla.org/projects/'>Projects</a></li>
-              <li><a href='http://education.mozilla.org/planet/'>Mozilla Education</a></li>
-              <li><a href='http://planet.mozilla.org/interns/'>Mozilla Interns</a></li>
-              <li><a href='http://planet.mozillamessaging.com/'>Mozilla Messaging</a></li>
-              <li><a href='http://mozilla.com.cn/topic/3/'>Mozilla Online (Chinese)</a></li>
-              <li><a href='http://planet.mozilla.org/research/'>Mozilla Research</a></li>
-              <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
               <li><a href='http://planet.firefox.com/'>Planet Firefox</a></li>
               <li><a href='http://planet.firefox.com/mobile/'>Planet Firefox Mobile</a></li>
+              <li><a href='http://planet.mozilla.org/thunderbird/'>Planet Thunderbird</a></li>
+              <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
               <li><a href='http://ux.firefox.com/'>Planet UX</a></li>
               <li><a href='http://quality.mozilla.org/community'>Planet QMO</a></li>
               <li><a href='http://planet.mozilla.org/ateam/'>Planet Automation</a></li>
+              <li><a href='http://education.mozilla.org/planet/'>Mozilla Education</a></li>
+              <li><a href='http://planet.mozilla.org/interns/'>Mozilla Interns</a></li>
+              <li><a href='http://planet.mozilla.org/research/'>Mozilla Research</a></li>
+              <li><a href='http://mozilla.com.cn/topic/3/'>Mozilla Online (Chinese)</a></li>
             </ul>
 
             <div id='sidebar'/>
