@@ -5,7 +5,7 @@
 
 * { margin: 0; padding: 0; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-body {}
+body { font-family: 'Open Sans Light', sans-serif; font-weight: 300; line-height: 125%; }
 p { margin: 0.5em 0 1em;}
 a{color:rgb(175,50,50)}
 #back{border-top:2px solid #fff;background:#f5f1e8 url(../bg-sand-1.png) repeat;background:url(../bg-gradient-sand-1.png) repeat-x 0 0,url(../bg-sand-1.png) repeat 0 0,#f5f1e8;min-height:100%;min-width:1024px;position:absolute;width:100%;z-index:-1}
@@ -53,12 +53,14 @@ header a.active:visited{color:rgb(80,80,80);}
  */
 #content-wrapper { margin: 0 auto; max-width: 1025px; min-width: 300px; }
 #content { padding: 1.5em 2% 0 1%; float: left; width: 76%; }
-#content h1 { font-family:'Open Sans Light',sans-serif; font-size: 26px; margin: 0 0 15px; text-shadow:0 1px 0 rgba(255,255,255,0.75)}
-#content h2 { font-family:'Open Sans Light',sans-serif; font-size: 22px; color:#af3232; margin: 20px 0; border-top:1px dotted rgb(72,72,72);text-shadow:0 1px 0 rgba(255,255,255,0.75)}
+#content h1 { font-family:'Open Sans Light',sans-serif; font-size: 26px; margin: 0 0 15px; text-shadow:0 1px 0 rgba(255,255,255,0.75); letter-spacing: -2px;}
+#content h2 { font-family:'Open Sans Light',sans-serif; font-size: 22px; color:#af3232; margin: 20px 0; padding-top: 8px; border-top:1px dotted rgb(72,72,72);text-shadow:0 1px 0 rgba(255,255,255,0.75)}
 #content h3 { font-family:'Open Sans Light',sans-serif; font-size: 22px; margin: 15px 0; text-shadow:0 1px 0 rgba(255,255,255,0.75)}
 #content h4 { font-family:'Open Sans Light',sans-serif;  font-size: 16px; margin: 15px 0; text-shadow:0 1px 0 rgba(255,255,255,0.75); font-weight:300}
 #content ul { margin: 0.5em 0 1em 40px; }
 #content article.entry { padding: 0 25px; }
+#content blockquote { padding: 0 30px; border-left: 5px solid #484848; font-style: italic; }
+#content .video-wrap { display: none; }
 
 /*
  * sidebar
