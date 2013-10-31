@@ -5,8 +5,8 @@ ExpiresDefault "access plus 5 minutes"
   ExpiresDefault "access plus 1 month"
 </FilesMatch>
 
-AddType text/xml rss ffkar opml soap sn2 tb tbrss wsdl xss
 AddType text/plain txt esf
+AddType application/xml xml rss ffkar opml soap sn2 tb tbrss wsdl xss
 AddType application/atom+xml atom
 AddType application/xhtml+xml xhtml
 AddType application/xhtml+xml html5
