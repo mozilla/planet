@@ -132,6 +132,8 @@ h4 a {
   text-align: right;
 }
 
+.news img {max-width:100% !important;}
+
 #footer {
   background-image: url('img/footer.jpg');
   background-position: center;
