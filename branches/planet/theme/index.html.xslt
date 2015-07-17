@@ -212,6 +212,7 @@
               <li><a href='http://planet.firefox.com/'>Planet Firefox</a></li>
               <li><a href='http://planet.firefox.com/mobile/'>Planet Firefox Mobile</a></li>
               <li><a href='http://planet.firefox.com/os/'>Planet FirefoxOS</a></li>
+              <li><a href="http://planet.mozilla.org/participation/">Planet Participation</a></li>
               <li><a href='http://planet.mozilla.org/thunderbird/'>Planet Thunderbird</a></li>
               <li><a href='http://planet.bugzilla.org/'>Planet Bugzilla</a></li>
               <li><a href='http://ux.firefox.com/'>Planet UX</a></li>
