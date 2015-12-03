@@ -24,13 +24,15 @@
 
 <body>
 
+<div class="wrapper">
 <div class="header">
 <h1><TMPL_VAR name></h1>
 </div>
 
-<div class="content">
+<div class="page-content">
 
 <TMPL_LOOP Items>
+<div class="post">
 <TMPL_IF new_date>
 <h2><TMPL_VAR new_date></h2>
 </TMPL_IF>
@@ -50,13 +52,14 @@
 </TMPL_IF>
 
 <TMPL_IF title>
-<h4><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
+<h1 class="post-title"><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h1>
 </TMPL_IF>
 <div class="entry">
 <TMPL_VAR content>
 <p class="date">
 <a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF creator>by <TMPL_VAR creator> at </TMPL_IF><TMPL_VAR date></a>
 </p>
+</div>
 </div>
 </TMPL_LOOP>
 
@@ -90,6 +93,7 @@ Last update: <TMPL_VAR date><br>
     <li><a href="http://www.mozilla.org/get-involved.html">Get Involved!</a></li>
    </ul>
    <p>Maintained by <a href="mailto:<TMPL_VAR owner_email>"><TMPL_VAR owner_name></a>, powered by <a href="http://www.intertwingly.net/code/venus/">Planet Venus</a></p>
+  </div>
   </div>
 </body>
 
